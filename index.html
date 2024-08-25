@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Digit Generator</title>
+    <title>Random Value Generator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <input type="number" id="minValue" placeholder="Min value">
-        <input type="number" id="maxValue" placeholder="Max Value">
-        <button onclick="generateRandomNumber()">Submit</button>
-        <div id="result">Your random value from the selected range is ${ random value }</div>
+        <div class="input-section">
+            <input type="number" id="minValue" placeholder="Min value">
+            <input type="number" id="maxValue" placeholder="Max value">
+            <button onclick="generateRandomValue()">Submit</button>
+        </div>
+        <div class="output-section">
+            <p id="output">Your random value from the selected range is ${ random value }</p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
