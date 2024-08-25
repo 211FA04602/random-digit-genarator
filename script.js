@@ -1,17 +1,11 @@
-function generateRandomNumber() {
-    const min = parseInt(document.getElementById('minValue').value);
-    const max = parseInt(document.getElementById('maxValue').value);
-    
-    if (isNaN(min) || isNaN(max)) {
-        alert('Please enter valid numbers');
-        return;
-    }
-    
-    if (min >= max) {
-        alert('Min value should be less than Max value');
-        return;
-    }
+function generateRandomValue() {
+    const minValue = parseInt(document.getElementById('minValue').value);
+    const maxValue = parseInt(document.getElementById('maxValue').value);
 
-    const randomValue = Math.floor(Math.random() * (max - min + 1)) + min;
-    document.getElementById('result').textContent = `Your random value from the selected range is ${randomValue}`;
+    if (!isNaN(minValue) && !isNaN(maxValue) && minValue <= maxValue) {
+        const randomValue = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
+        document.getElementById('output').innerText = `Your random value from the selected range is ${randomValue}`;
+    } else {
+        document.getElementById('output').innerText = `Please enter valid min and max values.`;
+    }
 }
